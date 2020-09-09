@@ -32,7 +32,7 @@ export class AuthController {
   @ApiOperation({ summary: 'Получение профиля текущего пользователя' })
   @ApiResponse({ type: ProfileResponseDto })
   @ApiBearerAuth(jwtConstants.authName)
-  public getProfile(@Request() req) {
+  public getProfile(@Request() req): ProfileResponseDto {
     return req.user;
   }
 }
